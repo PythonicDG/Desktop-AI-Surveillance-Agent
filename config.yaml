@@ -1,0 +1,14 @@
+# Desktop AI Surveillance Agent Configuration
+
+app:
+  name: "Desktop AI Surveillance Agent"
+  version: "0.1.0"
+  debug: true
+
+capture:
+  interval_seconds: 5
+  save_path: "data/captures"
+
+ai:
+  model_name: "gpt-4-vision-preview"
+  sensitivity: 0.7
