@@ -1,14 +1,61 @@
-# Desktop AI Surveillance Agent Configuration
+# ============================================================
+# DeskMate Configuration
+# ============================================================
+# Edit this file to customize DeskMate behaviour.
+# Restart the application after making changes.
+# ============================================================
 
-app:
-  name: "Desktop AI Surveillance Agent"
-  version: "0.1.0"
-  debug: true
+debug: false
+
+api:
+  gemini_key: AIzaSyD_3VN5CQgeUcH9aAxyWR3sHrjCRu5y0Ew
+  primary_model: "gemini-1.5-flash"
+  fallback_model: "gemini-2.0-flash"
+  max_retries: 3
+  retry_delay_seconds: 5
+  timeout_seconds: 30
+
+hotkeys:
+  trigger: "alt+space"
+  rewind: "alt+r"
+  standup: "alt+s"
+  clear: "alt+c"
 
 capture:
-  interval_seconds: 5
-  save_path: "data/captures"
+  resize_width: 1280
+  save_last_capture: true
+  include_clipboard: true
+  monitor_index: 1
 
-ai:
-  model_name: "gpt-4-vision-preview"
-  sensitivity: 0.7
+privacy:
+  enabled: true
+  blur_api_keys: true
+  blur_passwords: true
+  blur_emails: false
+  blur_credit_cards: true
+  min_key_length: 20
+
+ui:
+  window_width: 360
+  window_height: 460
+  opacity_idle: 0.92
+  theme: "dark"
+  font_size: 13
+  position_x: null
+  position_y: null
+
+memory:
+  session_history_limit: 10
+  mistake_threshold: 3
+  mistake_file: "data/mistakes.json"
+  session_log_file: "data/session_log.json"
+
+features:
+  timeline_enabled: false
+  timeline_interval_seconds: 60
+  timeline_max_keep: 120
+  timeline_dir: "data/timeline"
+  standup_enabled: true
+  live_docs_enabled: true
+  frustration_trigger_count: 4
+  frustration_window_seconds: 120
